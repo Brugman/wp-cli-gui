@@ -1,0 +1,67 @@
+// fancy colors
+@c1: #E74C3C;
+@c2: #2ECC71;
+@c3: #3498DB;
+@c4: #F1C40F;
+@c5: #E67E22;
+@c6: #9B59B6;
+@c7: #95A5A6;
+@c8: #34495E;
+@c9: #1ABC9C;
+@c0: #ECF0F1;
+
+// fancy background colors
+.bgc1 { background-color: @c1; }
+.bgc2 { background-color: @c2; }
+.bgc3 { background-color: @c3; }
+.bgc4 { background-color: @c4; }
+.bgc5 { background-color: @c5; }
+.bgc6 { background-color: @c6; }
+.bgc7 { background-color: @c7; }
+.bgc8 { background-color: @c8; }
+.bgc9 { background-color: @c9; }
+.bgc0 { background-color: @c0; }
+
+// background darker lighter
+.bgc-darker { background-color: rgba( 0, 0, 0, 0.1 ); }
+.bgc-lighter { background-color: rgba( 255, 255, 255, 0.1 ); }
+
+// add the colorloop mixin to an element
+// to easily spot all elements inside it
+.colorloop {
+    // make each one a little darker
+    // .bgc-darker
+    // rainbow effect!
+    &:nth-child(10n+1) { .bgc1; }
+    &:nth-child(10n+2) { .bgc2; }
+    &:nth-child(10n+3) { .bgc3; }
+    &:nth-child(10n+4) { .bgc4; }
+    &:nth-child(10n+5) { .bgc5; }
+    &:nth-child(10n+6) { .bgc6; }
+    &:nth-child(10n+7) { .bgc7; }
+    &:nth-child(10n+8) { .bgc8; }
+    &:nth-child(10n+9) { .bgc9; }
+    &:nth-child(10n+0) { .bgc0; }
+}
+
+.breakpoint-info {
+    z-index: 9999;
+    position: fixed;
+    right: 0;
+    bottom: 32px;
+    & > div {
+        padding: 10px 15px;
+        display: none;
+        color: #333;
+        font-family: sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+    }
+}
+
+@media @bp-xs { .breakpoint-info .bp-xs { display: block; .bgc1; } }
+@media @bp-sm { .breakpoint-info .bp-sm { display: block; .bgc2; } }
+@media @bp-md { .breakpoint-info .bp-md { display: block; .bgc3; } }
+@media @bp-lg { .breakpoint-info .bp-lg { display: block; .bgc4; } }
+@media @bp-xl { .breakpoint-info .bp-xl { display: block; .bgc5; } }
+

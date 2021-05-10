@@ -1,0 +1,6 @@
+node_modules/*
+public_html/assets/*
+!public_html/assets/vendor/
+
+*.sublime-*
+

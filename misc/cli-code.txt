@@ -1,0 +1,7 @@
+wp option update timezone_string "Europe/Amsterdam"
+wp option update date_format "Y-m-d"
+wp option update time_format "H:i"
+
+wp option update default_pingback_flag 0
+wp option update default_ping_status 0
+

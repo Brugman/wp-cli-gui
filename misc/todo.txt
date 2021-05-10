@@ -1,0 +1,33 @@
+multiple presets
+preset availability indicators
+
+labels left of form fields
+link labels to fields with ids
+
+pretty checkboxes
+
+code copy buttons
+
+add code to pre tags?
+
+install plugins, list of suggestions
+
+
+
+
+
+# old notes
+
+input, blogdescription, Tagline
+select, timezone_string, Timezone
+select with input, date_format, Date Format
+select with input, time_format, Time Format
+
+checkbox, Disable pingbacks/trackbacks, default_ping_status
+checkbox, Disable comments, default_comment_status
+
+manageable list with default, Create menus
+checkbox, show_on_front, Homepage Static pages
+checkbox, page_on_front, Front Page
+checkbox, page_for_posts, Blog
+
