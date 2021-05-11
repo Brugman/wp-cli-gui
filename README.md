@@ -4,6 +4,8 @@
 
 This project is currently in development. Once a sufficient feature set for v2 has been achieved it will be deployed to [wpcligui.com](https://wpcligui.com/).
 
+![demo](/demo.gif)
+
 ## Contributing
 
 Found a bug? Anything you would like to ask, add or change? Please open an issue so we can talk about it.
