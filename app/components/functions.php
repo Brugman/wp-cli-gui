@@ -195,13 +195,14 @@ function weekdays_list()
 function permalink_structure_list()
 {
     return [
-        'Default'          => 'default',
-        'Plain'            => '',
-        'Day and name'     => '/%year%/%monthnum%/%day%/%postname%/',
-        'Month and name'   => '/%year%/%monthnum%/%postname%/',
-        'Numeric'          => '/archives/%post_id%',
-        'Post name'        => '/%postname%/',
-        'Blog / Post name' => '/blog/%postname%/',
+        'Default'                  => 'default',
+        '/?p=123'                  => '',
+        '/2021/05/12/sample-post/' => '/%year%/%monthnum%/%day%/%postname%/',
+        '/2021/05/sample-post/'    => '/%year%/%monthnum%/%postname%/',
+        '/archives/123'            => '/archives/%post_id%',
+        '/sample-post/'            => '/%postname%/',
+        '/blog/sample-post/'       => '/blog/%postname%/',
+        '/news/sample-post/'       => '/news/%postname%/',
     ];
 }
 
