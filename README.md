@@ -2,9 +2,7 @@
 
 > A GUI for a command line interface for WordPress.
 
-This project is currently in development. Once a sufficient feature set for v2 has been achieved it will be deployed to [wpcligui.com](https://wpcligui.com/).
-
-![demo](/demo.gif)
+This codebase is for the Vue.js rewrite of the site. When the v2.0.0 featureset is reached it will be deployed to [wpcligui.com](https://wpcligui.com/). A beta build can found on [beta.wpcligui.com](https://beta.wpcligui.com/) in the mean time.
 
 ## Contributing
 
