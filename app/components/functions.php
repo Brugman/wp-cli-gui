@@ -7,6 +7,12 @@ function d( $var )
     echo "</pre>";
 }
 
+function dd( $var )
+{
+    d( $var );
+    exit;
+}
+
 function download_languages_list()
 {
     return [
@@ -176,5 +182,20 @@ function permalink_structure_list()
         'Post name'        => '/%postname%/',
         'Blog / Post name' => '/blog/%postname%/',
     ];
+}
+
+function fe_id()
+{
+    global $iteration, $number;
+
+    $iteration = $iteration ?? 0;
+    $number    = $number ?? 0;
+
+    $iteration++;
+
+    if ( $iteration % 2 )
+        $number++;
+
+    return 'fe-'.$number;
 }
 

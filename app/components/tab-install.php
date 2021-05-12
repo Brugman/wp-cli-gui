@@ -5,9 +5,9 @@
 <div class="cc">
     <div class="control">
 
-        <div class="form-element">
-            <label>Locale</label>
-            <select v-model="download_language">
+        <div class="form-element fe-select">
+            <label for="<?=fe_id();?>">Locale</label>
+            <select id="<?=fe_id();?>" v-model="download_language">
 <?php foreach ( download_languages_list() as $code => $label ): ?>
                 <option value="<?=$code;?>"><?=$label;?></option>
 <?php endforeach; ?>
@@ -27,29 +27,29 @@
 <div class="cc">
     <div class="control">
 
-        <div class="form-element">
-            <label>Database host</label>
-            <input v-model="database_host">
+        <div class="form-element fe-input">
+            <label for="<?=fe_id();?>">Database host</label>
+            <input id="<?=fe_id();?>" v-model="database_host">
         </div>
 
-        <div class="form-element">
-            <label>Database name</label>
-            <input v-model="database_name">
+        <div class="form-element fe-input">
+            <label for="<?=fe_id();?>">Database name</label>
+            <input id="<?=fe_id();?>" v-model="database_name">
         </div>
 
-        <div class="form-element">
-            <label>Database prefix</label>
-            <input v-model="database_prefix">
+        <div class="form-element fe-input">
+            <label for="<?=fe_id();?>">Database prefix</label>
+            <input id="<?=fe_id();?>" v-model="database_prefix">
         </div>
 
-        <div class="form-element">
-            <label>Database user</label>
-            <input v-model="database_user">
+        <div class="form-element fe-input">
+            <label for="<?=fe_id();?>">Database user</label>
+            <input id="<?=fe_id();?>" v-model="database_user">
         </div>
 
-        <div class="form-element">
-            <label>Database pass</label>
-            <input v-model="database_pass">
+        <div class="form-element fe-input">
+            <label for="<?=fe_id();?>">Database pass</label>
+            <input id="<?=fe_id();?>" v-model="database_pass">
         </div>
 
     </div><!-- control -->
@@ -65,11 +65,9 @@
 <div class="cc">
     <div class="control">
 
-        <div class="form-element">
-            <label>
-                <input type="checkbox" v-model="create_database">
-                Create database
-            </label>
+        <div class="form-element fe-checkbox">
+            <label for="<?=fe_id();?>">Create database</label>
+            <input id="<?=fe_id();?>" type="checkbox" v-model="create_database">
         </div>
 
     </div><!-- control -->
@@ -87,32 +85,32 @@
 
         <h3>Site</h3>
 
-        <div class="form-element">
-            <label>Name</label>
-            <input v-model="site_name">
+        <div class="form-element fe-input">
+            <label for="<?=fe_id();?>">Name</label>
+            <input id="<?=fe_id();?>" v-model="site_name">
         </div>
 
-        <div class="form-element">
-            <label>URL</label>
-            <input v-model="site_url">
+        <div class="form-element fe-input">
+            <label for="<?=fe_id();?>">URL</label>
+            <input id="<?=fe_id();?>" v-model="site_url">
         </div>
 
         <h3>Account</h3>
 
-        <div class="form-element">
-            <label>Username</label>
-            <input v-model="account_username">
+        <div class="form-element fe-input">
+            <label for="<?=fe_id();?>">Username</label>
+            <input id="<?=fe_id();?>" v-model="account_username">
         </div>
 
-        <div class="form-element">
-            <label>Password</label>
-            <input v-model="account_password">
+        <div class="form-element fe-input">
+            <label for="<?=fe_id();?>">Password</label>
+            <input id="<?=fe_id();?>" v-model="account_password">
             <p @click="password_generate">regenerate</p>
         </div>
 
-        <div class="form-element">
-            <label>Email address</label>
-            <input v-model="account_email">
+        <div class="form-element fe-input">
+            <label for="<?=fe_id();?>">Email address</label>
+            <input id="<?=fe_id();?>" v-model="account_email">
         </div>
 
     </div><!-- control -->

@@ -3,29 +3,25 @@
 <div class="cc">
     <div class="control">
 
-        <div class="form-element">
-            <label>
-                <input type="checkbox" v-model="remove_example_comment">
-                Remove example comment
-            </label>
+        <div class="form-element fe-checkbox">
+            <label for="<?=fe_id();?>">Remove example comment</label>
+            <input id="<?=fe_id();?>" type="checkbox" v-model="remove_example_comment">
         </div>
 
-        <div class="form-element">
-            <p>Remove default posts</p>
+        <div class="form-element fe-checkboxlist">
+            <p class="label">Remove default posts</p>
 <?php foreach ( default_posts_list() as $post_id => $post_name ): ?>
-            <label>
-                <input type="checkbox" v-model="remove_default_posts" value="<?=$post_id;?>">
-                <?=$post_name;?>
-            </label>
+            <label for="<?=fe_id();?>"><?=$post_name;?></label>
+            <input id="<?=fe_id();?>" type="checkbox" v-model="remove_default_posts" value="<?=$post_id;?>">
 <?php endforeach; ?>
         </div>
 
-        <div class="form-element">
-            <p>Create pages</p>
+        <div class="form-element fe-selectlist">
+            <label for="<?=fe_id();?>">Create pages</label>
+            <input id="<?=fe_id();?>" v-model="create_pages_new" @keyup.enter="create_pages_add">
             <ul>
                 <li v-for="( page, index ) in create_pages">{{ page }}<span class="remove" @click="create_pages_remove( index )">x</span></li>
             </ul>
-            <input v-model="create_pages_new" @keyup.enter="create_pages_add">
         </div>
 
     </div><!-- control -->

@@ -3,22 +3,20 @@
 <div class="cc">
     <div class="control">
 
-        <div class="form-element">
-            <p>Remove default plugins</p>
+        <div class="form-element fe-checkboxlist">
+            <p class="label">Remove default plugins</p>
 <?php foreach ( default_plugins_list() as $plugin_slug => $plugin_name ): ?>
-            <label>
-                <input type="checkbox" v-model="remove_default_plugins" value="<?=$plugin_slug;?>">
-                <?=$plugin_name;?>
-            </label>
+            <label for="<?=fe_id();?>"><?=$plugin_name;?></label>
+            <input id="<?=fe_id();?>" type="checkbox" v-model="remove_default_plugins" value="<?=$plugin_slug;?>">
 <?php endforeach; ?>
         </div>
 
-        <div class="form-element">
-            <p>Install plugins</p>
+        <div class="form-element fe-selectlist">
+            <label for="<?=fe_id();?>">Install plugins</label>
+            <input id="<?=fe_id();?>" v-model="install_plugins_new" @keyup.enter="install_plugins_add">
             <ul>
                 <li v-for="( plugin, index ) in install_plugins">{{ plugin }}<span class="remove" @click="install_plugins_remove( index )">x</span></li>
             </ul>
-            <input v-model="install_plugins_new" @keyup.enter="install_plugins_add">
         </div>
 
     </div><!-- control -->
