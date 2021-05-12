@@ -30,6 +30,7 @@ var app = new Vue({
         // # site configuration
         // ## settings
         blank_tagline: true,
+        date_format: 'default',
         time_format: 'default',
         start_of_week: 1,
         search_engine_visibility: true,
@@ -197,6 +198,8 @@ var app = new Vue({
 
             if ( this.blank_tagline )
                 cmds.push( 'wp option update blogdescription ""' );
+            if ( this.date_format != 'default' )
+                cmds.push( 'wp option update date_format "'+this.date_format+'"' );
             if ( this.time_format != 'default' )
                 cmds.push( 'wp option update time_format "'+this.time_format+'"' );
             if ( this.start_of_week )

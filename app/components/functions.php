@@ -158,6 +158,17 @@ function default_posts_list()
     ];
 }
 
+function date_format_list()
+{
+    return [
+        'default' => 'Default',
+        'F j, Y'  => 'May 12, 2021',
+        'Y-m-d'   => '2021-05-12',
+        'm/d/Y'   => '05/12/2021',
+        'd/m/Y'   => '12/05/2021',
+    ];
+}
+
 function time_format_list()
 {
     return [
