@@ -12,7 +12,14 @@
 
         <p>(( Timezone ))</p>
         <p>(( Date Format ))</p>
-        <p>(( Time Format ))</p>
+        <div class="form-element fe-select">
+            <label for="<?=fe_id();?>">Time Format</label>
+            <select id="<?=fe_id();?>" v-model="time_format">
+<?php foreach ( time_format_list() as $value => $label ): ?>
+                <option value="<?=$value;?>"><?=$label;?></option>
+<?php endforeach; ?>
+            </select>
+        </div>
 
         <div class="form-element fe-select">
             <label for="<?=fe_id();?>">Week Starts On</label>

@@ -158,6 +158,16 @@ function default_posts_list()
     ];
 }
 
+function time_format_list()
+{
+    return [
+        'default' => 'Default',
+        'g:i a'   => '5:14 pm',
+        'g:i A'   => '5:14 PM',
+        'H:i'     => '17:14',
+    ];
+}
+
 function weekdays_list()
 {
     return [
