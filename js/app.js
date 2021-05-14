@@ -2,7 +2,6 @@ var app = new Vue({
     el: '#app',
 
     data: {
-
         // tabs
         active_tab: 'install',
 
@@ -56,6 +55,9 @@ var app = new Vue({
             'wordpress-seo',
         ],
         install_plugins_new: '',
+        // # presets
+        preset_id: 1,
+        preset_name: '',
     },
 
     created: function () {
@@ -63,22 +65,11 @@ var app = new Vue({
     },
 
     mounted() {
-        if ( localStorage.getItem('data_preset_1') ) {
-            var data_preset_1 = JSON.parse( localStorage.getItem('data_preset_1') );
-            Object.assign( this.$data, data_preset_1 );
-
-            // console.log( 'data_preset_1:' );
-            // console.log( data_preset_1 );
-        } else {
-            // console.log( 'data_preset_1 is empty' );
-        }
-
-        // console.log( 'localStorage:' );
-        // console.log( localStorage );
+        // # presets
+        this.load_preset( 1 );
     },
 
     methods: {
-
         // tabs
         set_active_tab() {
             this.active_tab = event.target.getAttribute('data-tab');
@@ -117,17 +108,26 @@ var app = new Vue({
             Vue.delete( this.install_plugins, index );
         },
         // # presets
-        save_default() {
-            localStorage.setItem(
-                'data_preset_1',
-                JSON.stringify( this.$data )
-            );
-            console.log( 'saved data as data_preset_1' );
+        load_preset( id ) {
+            if ( typeof localStorage[ 'data_preset_'+id ] != "undefined" ) {
+                console.log( 'loading preset '+id );
+                var preset = JSON.parse( localStorage.getItem( 'data_preset_'+id ) );
+                Object.assign( this.$data, preset );
+            } else {
+                console.log( 'preset '+id+' not available' );
+            }
         },
-        clear_default() {
-            localStorage.removeItem('data_preset_1');
+        save_preset( id ) {
+            console.log( 'saving data as preset '+id );
 
-            console.log( 'cleared data_preset_1' );
+            localStorage.setItem( 'data_preset_'+id, JSON.stringify( this.$data ) );
+            localStorage.setItem( 'data_preset_'+id+'_name', this.preset_name );
+        },
+        clear_preset( id ) {
+            console.log( 'clearing preset '+id );
+
+            localStorage.removeItem( 'data_preset_'+id );
+            localStorage.removeItem( 'data_preset_'+id+'_name' );
         },
     },
 
@@ -225,8 +225,7 @@ var app = new Vue({
                 cmds.push( 'wp comment delete 1 --force' );
             if ( this.remove_default_posts.length > 0 )
                 cmds.push( 'wp post delete '+this.remove_default_posts.join(' ')+' --force' );
-            if ( this.create_pages.length > 0 )
-            {
+            if ( this.create_pages.length > 0 ) {
                 this.create_pages.forEach( page_name => {
                     cmds.push( 'wp post create --post_type=page --post_status=publish --post_title="'+page_name+'"' );
                 });
