@@ -26,7 +26,7 @@ $tabs = [
     <div class="tabs">
         <div class="container">
 <?php foreach ( $tabs as $key => $name ): ?>
-            <div class="tab" data-tab="<?=$key;?>" :class="{ 'active': is_tab_active('<?=$key;?>') }">
+            <div data-tab="<?=$key;?>" class="tab" :class="{ 'active': is_tab_active('<?=$key;?>') }">
 <?php include 'tab-'.$key.'.php'; ?>
             </div><!-- tab -->
 <?php endforeach; // $tabs ?>
