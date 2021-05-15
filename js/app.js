@@ -49,6 +49,7 @@ var app = new Vue({
             // # site configuration
             // ## settings
             blank_tagline: true,
+            timezone: 'default',
             date_format: 'default',
             time_format: 'default',
             start_of_week: 1,
@@ -236,6 +237,8 @@ var app = new Vue({
 
             if ( this.active_config.blank_tagline )
                 cmds.push( 'wp option update blogdescription ""' );
+            if ( this.active_config.timezone != 'default' )
+                cmds.push( 'wp option update timezone_string "'+this.active_config.timezone+'"' );
             if ( this.active_config.date_format != 'default' )
                 cmds.push( 'wp option update date_format "'+this.active_config.date_format+'"' );
             if ( this.active_config.time_format != 'default' )

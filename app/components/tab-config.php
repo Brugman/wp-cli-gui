@@ -10,7 +10,14 @@
             <input id="<?=fe_id();?>" type="checkbox" v-model="active_config.blank_tagline">
         </div>
 
-        <p>(( Timezone ))</p>
+        <div class="form-element fe-select">
+            <label for="<?=fe_id();?>">Timezone</label>
+            <select id="<?=fe_id();?>" v-model="active_config.timezone">
+<?php foreach ( timezone_list() as $value => $label ): ?>
+                <option value="<?=$value;?>"><?=$label;?></option>
+<?php endforeach; ?>
+            </select>
+        </div>
 
         <div class="form-element fe-select">
             <label for="<?=fe_id();?>">Date Format</label>
