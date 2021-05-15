@@ -5,22 +5,22 @@
 
         <div class="form-element fe-checkbox">
             <label for="<?=fe_id();?>">Remove example comment</label>
-            <input id="<?=fe_id();?>" type="checkbox" v-model="remove_example_comment">
+            <input id="<?=fe_id();?>" type="checkbox" v-model="active_config.remove_example_comment">
         </div>
 
         <div class="form-element fe-checkboxlist">
             <p class="label">Remove default posts</p>
 <?php foreach ( default_posts_list() as $post_id => $post_name ): ?>
             <label for="<?=fe_id();?>"><?=$post_name;?></label>
-            <input id="<?=fe_id();?>" type="checkbox" v-model="remove_default_posts" value="<?=$post_id;?>">
+            <input id="<?=fe_id();?>" type="checkbox" v-model="active_config.remove_default_posts" value="<?=$post_id;?>">
 <?php endforeach; ?>
         </div>
 
         <div class="form-element fe-selectlist">
             <label for="<?=fe_id();?>">Create pages</label>
-            <input id="<?=fe_id();?>" v-model="create_pages_new" @keyup.enter="create_pages_add">
+            <input id="<?=fe_id();?>" v-model="active_config.create_pages_new" @keyup.enter="create_pages_add">
             <ul>
-                <li v-for="( page, index ) in create_pages">{{ page }}<span class="remove" @click="create_pages_remove( index )">x</span></li>
+                <li v-for="( page, index ) in active_config.create_pages">{{ page }}<span class="remove" @click="create_pages_remove( index )">x</span></li>
             </ul>
         </div>
 

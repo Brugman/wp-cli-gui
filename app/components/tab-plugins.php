@@ -7,15 +7,15 @@
             <p class="label">Remove default plugins</p>
 <?php foreach ( default_plugins_list() as $plugin_slug => $plugin_name ): ?>
             <label for="<?=fe_id();?>"><?=$plugin_name;?></label>
-            <input id="<?=fe_id();?>" type="checkbox" v-model="remove_default_plugins" value="<?=$plugin_slug;?>">
+            <input id="<?=fe_id();?>" type="checkbox" v-model="active_config.remove_default_plugins" value="<?=$plugin_slug;?>">
 <?php endforeach; ?>
         </div>
 
         <div class="form-element fe-selectlist">
             <label for="<?=fe_id();?>">Install plugins</label>
-            <input id="<?=fe_id();?>" v-model="install_plugins_new" @keyup.enter="install_plugins_add">
+            <input id="<?=fe_id();?>" v-model="active_config.install_plugins_new" @keyup.enter="install_plugins_add">
             <ul>
-                <li v-for="( plugin, index ) in install_plugins">{{ plugin }}<span class="remove" @click="install_plugins_remove( index )">x</span></li>
+                <li v-for="( plugin, index ) in active_config.install_plugins">{{ plugin }}<span class="remove" @click="install_plugins_remove( index )">x</span></li>
             </ul>
         </div>
 

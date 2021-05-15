@@ -7,14 +7,14 @@
 
         <div class="form-element fe-checkbox">
             <label for="<?=fe_id();?>">Blank Tagline</label>
-            <input id="<?=fe_id();?>" type="checkbox" v-model="blank_tagline">
+            <input id="<?=fe_id();?>" type="checkbox" v-model="active_config.blank_tagline">
         </div>
 
         <p>(( Timezone ))</p>
 
         <div class="form-element fe-select">
             <label for="<?=fe_id();?>">Date Format</label>
-            <select id="<?=fe_id();?>" v-model="date_format">
+            <select id="<?=fe_id();?>" v-model="active_config.date_format">
 <?php foreach ( time_format_list() as $value => $label ): ?>
                 <option value="<?=$value;?>"><?=$label;?></option>
 <?php endforeach; ?>
@@ -23,7 +23,7 @@
 
         <div class="form-element fe-select">
             <label for="<?=fe_id();?>">Time Format</label>
-            <select id="<?=fe_id();?>" v-model="time_format">
+            <select id="<?=fe_id();?>" v-model="active_config.time_format">
 <?php foreach ( time_format_list() as $value => $label ): ?>
                 <option value="<?=$value;?>"><?=$label;?></option>
 <?php endforeach; ?>
@@ -32,7 +32,7 @@
 
         <div class="form-element fe-select">
             <label for="<?=fe_id();?>">Week Starts On</label>
-            <select id="<?=fe_id();?>" v-model="start_of_week">
+            <select id="<?=fe_id();?>" v-model="active_config.start_of_week">
 <?php foreach ( weekdays_list() as $key => $value ): ?>
                 <option value="<?=$key;?>"><?=$value;?></option>
 <?php endforeach; ?>
@@ -41,27 +41,27 @@
 
         <div class="form-element fe-checkbox">
             <label for="<?=fe_id();?>">Discourage search engines</label>
-            <input id="<?=fe_id();?>" type="checkbox" v-model="search_engine_visibility">
+            <input id="<?=fe_id();?>" type="checkbox" v-model="active_config.search_engine_visibility">
         </div>
 
         <div class="form-element fe-checkbox">
             <label for="<?=fe_id();?>">Allow comments on new posts</label>
-            <input id="<?=fe_id();?>" type="checkbox" v-model="allow_comments_new_posts">
+            <input id="<?=fe_id();?>" type="checkbox" v-model="active_config.allow_comments_new_posts">
         </div>
 
         <div class="form-element fe-checkbox">
             <label for="<?=fe_id();?>">Show Avatars</label>
-            <input id="<?=fe_id();?>" type="checkbox" v-model="show_avatars">
+            <input id="<?=fe_id();?>" type="checkbox" v-model="active_config.show_avatars">
         </div>
 
         <div class="form-element fe-checkbox">
             <label for="<?=fe_id();?>">Uploads in year/month folders</label>
-            <input id="<?=fe_id();?>" type="checkbox" v-model="uploads_in_folders">
+            <input id="<?=fe_id();?>" type="checkbox" v-model="active_config.uploads_in_folders">
         </div>
 
         <div class="form-element fe-select">
             <label for="<?=fe_id();?>">Permalink Structure</label>
-            <select id="<?=fe_id();?>" v-model="permalink_structure">
+            <select id="<?=fe_id();?>" v-model="active_config.permalink_structure">
 <?php foreach ( permalink_structure_list() as $label => $structure ): ?>
                 <option value="<?=$structure;?>"><?=$label;?></option>
 <?php endforeach; ?>
