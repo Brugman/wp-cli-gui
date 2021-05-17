@@ -54,6 +54,7 @@ var app = new Vue({
             time_format: 'default',
             start_of_week: 1,
             search_engine_visibility: true,
+            use_pingbacks: false,
             allow_comments_new_posts: true,
             show_avatars: true,
             uploads_in_folders: true,
@@ -247,6 +248,10 @@ var app = new Vue({
                 cmds.push( 'wp option update start_of_week '+this.active_config.start_of_week );
             if ( this.active_config.search_engine_visibility )
                 cmds.push( 'wp option update blog_public 0' );
+            if ( !this.active_config.use_pingbacks )
+                cmds.push( 'wp option update default_pingback_flag ""' );
+            if ( !this.active_config.use_pingbacks )
+                cmds.push( 'wp option update default_ping_status ""' );
             if ( !this.active_config.allow_comments_new_posts )
                 cmds.push( 'wp option update default_comment_status 0' );
             if ( !this.active_config.show_avatars )

@@ -52,6 +52,11 @@
         </div>
 
         <div class="form-element fe-checkbox">
+            <label for="<?=fe_id();?>">Use pingbacks/trackbacks</label>
+            <input id="<?=fe_id();?>" type="checkbox" v-model="active_config.use_pingbacks">
+        </div>
+
+        <div class="form-element fe-checkbox">
             <label for="<?=fe_id();?>">Allow comments on new posts</label>
             <input id="<?=fe_id();?>" type="checkbox" v-model="active_config.allow_comments_new_posts">
         </div>
