@@ -15,7 +15,7 @@
             <label for="<?=fe_id();?>">Install plugins</label>
             <input id="<?=fe_id();?>" v-model="active_config.install_plugins_new" @keyup.enter="install_plugins_add">
             <ul>
-                <li v-for="( plugin, index ) in active_config.install_plugins">{{ plugin }}<span class="remove" @click="install_plugins_remove( index )">x</span></li>
+                <li v-for="( plugin, index ) in active_config.install_plugins">{{ plugin }}<a :href="link_to_plugin( plugin )" target="_blank">(i)</a><span class="remove" @click="install_plugins_remove( index )">x</span></li>
             </ul>
         </div>
 

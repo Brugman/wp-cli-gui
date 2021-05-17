@@ -133,6 +133,9 @@ var app = new Vue({
         install_plugins_remove( index ) {
             Vue.delete( this.install_plugins, index );
         },
+        link_to_plugin( plugin ) {
+            return 'https://wordpress.org/plugins/'+plugin+'/';
+        },
         // # presets
         load_preset( id ) {
             console.log( 'loading preset '+id );
