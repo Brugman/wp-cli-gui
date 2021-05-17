@@ -120,24 +120,24 @@ var app = new Vue({
                 let random_index = Math.floor( Math.random() * chars.length );
                 password += chars.substring( random_index, random_index+1 );
             }
-            this.account_password = password;
+            this.active_config.account_password = password;
         },
         // # site configuration
         // ## content
         create_pages_add() {
-            this.create_pages.push( this.create_pages_new );
-            this.create_pages_new = '';
+            this.active_config.create_pages.push( this.active_config.create_pages_new );
+            this.active_config.create_pages_new = '';
         },
         create_pages_remove( index ) {
-            Vue.delete( this.create_pages, index );
+            Vue.delete( this.active_config.create_pages, index );
         },
         // ## plugins
         install_plugins_add() {
-            this.install_plugins.push( this.install_plugins_new );
-            this.install_plugins_new = '';
+            this.active_config.install_plugins.push( this.active_config.install_plugins_new );
+            this.active_config.install_plugins_new = '';
         },
         install_plugins_remove( index ) {
-            Vue.delete( this.install_plugins, index );
+            Vue.delete( this.active_config.install_plugins, index );
         },
         link_to_plugin( plugin ) {
             return 'https://wordpress.org/plugins/'+plugin+'/';
