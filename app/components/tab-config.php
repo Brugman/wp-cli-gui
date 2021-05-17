@@ -57,7 +57,7 @@
         </div>
 
         <div class="form-element fe-checkbox">
-            <label for="<?=fe_id();?>">Allow comments on new posts</label>
+            <label for="<?=fe_id();?>">Comments on Posts</label>
             <input id="<?=fe_id();?>" type="checkbox" v-model="active_config.allow_comments_new_posts">
         </div>
 
