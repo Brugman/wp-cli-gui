@@ -22,7 +22,7 @@
         <div class="form-element fe-select">
             <label for="<?=fe_id();?>">Date Format</label>
             <select id="<?=fe_id();?>" v-model="active_config.date_format">
-<?php foreach ( time_format_list() as $value => $label ): ?>
+<?php foreach ( date_format_list() as $value => $label ): ?>
                 <option value="<?=$value;?>"><?=$label;?></option>
 <?php endforeach; ?>
             </select>
