@@ -17,7 +17,9 @@
     </div><!-- control -->
     <div class="code">
 
-        <pre v-text="code_t1_download"></pre>
+        <pre v-show="code_t1_download" v-text="code_t1_download"></pre>
+
+        <button v-clipboard:copy="code_t1_download">Copy</button>
 
     </div><!-- code -->
 </div><!-- cc -->
@@ -55,7 +57,9 @@
     </div><!-- control -->
     <div class="code">
 
-        <pre v-text="code_t1_config"></pre>
+        <pre v-show="code_t1_config" v-text="code_t1_config"></pre>
+
+        <button v-clipboard:copy="code_t1_config">Copy</button>
 
     </div><!-- code -->
 </div><!-- cc -->
@@ -74,6 +78,8 @@
     <div class="code">
 
         <pre v-show="code_t1_database" v-text="code_t1_database"></pre>
+
+        <button v-clipboard:copy="code_t1_database">Copy</button>
 
     </div><!-- code -->
 </div><!-- cc -->
@@ -116,7 +122,9 @@
     </div><!-- control -->
     <div class="code">
 
-        <pre v-text="code_t1_install"></pre>
+        <pre v-show="code_t1_install" v-text="code_t1_install"></pre>
+
+        <button v-clipboard:copy="code_t1_install">Copy</button>
 
     </div><!-- code -->
 </div><!-- cc -->

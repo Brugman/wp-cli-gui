@@ -29,6 +29,8 @@
 
         <pre v-show="code_t3_content" v-text="code_t3_content"></pre>
 
+        <button v-clipboard:copy="code_t3_content">Copy</button>
+
     </div><!-- code -->
 </div><!-- cc -->
 

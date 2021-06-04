@@ -24,6 +24,8 @@
 
         <pre v-show="code_t4_plugins" v-text="code_t4_plugins"></pre>
 
+        <button v-clipboard:copy="code_t4_plugins">Copy</button>
+
     </div><!-- code -->
 </div><!-- cc -->
 

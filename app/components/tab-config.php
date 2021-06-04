@@ -85,6 +85,8 @@
 
         <pre v-show="code_t2_settings" v-text="code_t2_settings"></pre>
 
+        <button v-clipboard:copy="code_t2_settings">Copy</button>
+
     </div><!-- code -->
 </div><!-- cc -->
 
