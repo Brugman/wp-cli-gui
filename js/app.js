@@ -135,7 +135,13 @@ var app = new Vue({
         },
         // ## plugins
         install_plugins_add() {
-            this.active_config.install_plugins.push( this.active_config.install_plugins_new );
+
+            this.active_config.install_plugins_new = this.active_config.install_plugins_new.trim();
+
+            if ( this.active_config.install_plugins_new.length > 0 )
+                if ( !this.active_config.install_plugins.includes( this.active_config.install_plugins_new ) )
+                    this.active_config.install_plugins.unshift( this.active_config.install_plugins_new );
+
             this.active_config.install_plugins_new = '';
         },
         install_plugins_remove( index ) {
@@ -297,7 +303,7 @@ var app = new Vue({
             if ( this.active_config.remove_default_plugins.length > 0 )
                 cmds.push( 'wp plugin delete '+this.active_config.remove_default_plugins.join(' ') );
             if ( this.active_config.install_plugins.length > 0 )
-                cmds.push( 'wp plugin install '+this.active_config.install_plugins.join(' ') );
+                cmds.push( 'wp plugin install '+this.active_config.install_plugins.slice(0).reverse().join(' ') );
 
             return cmds.join('\r\n');
         },
