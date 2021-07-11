@@ -11,12 +11,8 @@
         </div>
 
         <div class="form-element fe-select">
-            <label for="<?=fe_id();?>">Timezone</label>
-            <select id="<?=fe_id();?>" v-model="active_config.timezone">
-<?php foreach ( timezone_list() as $value => $label ): ?>
-                <option value="<?=$value;?>"><?=$label;?></option>
-<?php endforeach; ?>
-            </select>
+            <p class="label">Timezone</p>
+            <v-select v-model="active_config.timezone" :options="<?=vue_select_options( timezone_list() );?>" :reduce="options => options.value" label="label"></v-select>
         </div>
 
         <div class="form-element fe-select">

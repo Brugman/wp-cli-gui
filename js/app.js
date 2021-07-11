@@ -1,3 +1,5 @@
+Vue.component( 'v-select', VueSelect.VueSelect );
+
 var app = new Vue({
     el: '#app',
 

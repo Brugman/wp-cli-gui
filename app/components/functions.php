@@ -13,6 +13,16 @@ function dd( $var )
     exit;
 }
 
+function vue_select_options( $list )
+{
+    $string = '';
+
+    foreach ( $list as $value => $label )
+        $string .= "{ value: '{$value}', label: '{$label}' },";
+
+    return '['.substr( $string, 0, -1 ).']';
+}
+
 function download_languages_list()
 {
     return [

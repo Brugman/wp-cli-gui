@@ -6,12 +6,8 @@
     <div class="control">
 
         <div class="form-element fe-select">
-            <label for="<?=fe_id();?>">Locale</label>
-            <select id="<?=fe_id();?>" v-model="active_config.download_language">
-<?php foreach ( download_languages_list() as $code => $label ): ?>
-                <option value="<?=$code;?>"><?=$label;?></option>
-<?php endforeach; ?>
-            </select>
+            <p class="label">Locale</p>
+            <v-select v-model="active_config.download_language" :options="<?=vue_select_options( download_languages_list() );?>" :reduce="options => options.value" label="label"></v-select>
         </div>
 
     </div><!-- control -->
